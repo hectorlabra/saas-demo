@@ -12,8 +12,12 @@ export default function Home() {
         <div className="max-w-3xl mx-auto flex justify-between items-center px-8 py-4">
           <div className="font-bold">SaaS Demo</div>
           <div className="space-x-4 max-md:hidden">
-            <a className="link link-hover">Pricing</a>
-            {/* <a className="link link-hover">FAQ</a> */}
+            <a className="link link-hover" href="#pricing">
+              Pricing
+            </a>
+            <a className="link link-hover" href="#faq">
+              FAQ
+            </a>
           </div>
           <div>
             <ButtonLogin isLoggedIn={isLoggedIn} name={name} />
@@ -21,8 +25,8 @@ export default function Home() {
         </div>
       </section>
       {/* HERO */}
-      <section className="text-center py-32 px-8 max-w-3xl mx-auto">
-        <h1 className="text-4xl lg:text-5xl font-extrabold mb-6">
+      <section className="h-screen flex flex-col justify-start items-center text-center px-8 max-w-3xl mx-auto">
+        <h1 className="text-4xl lg:text-5xl font-extrabold mt-50 mb-6">
           Collect customer feedback to build better products
         </h1>
         <div className="opacity-90 mb-10">
@@ -32,7 +36,7 @@ export default function Home() {
         <ButtonLogin isLoggedIn={isLoggedIn} name={name} />
       </section>
       {/* PRICING */}
-      <section className="bg-base-200">
+      <section className="bg-base-200" id="pricing">
         <div className="py-32 px-8 max-w-3xl mx-auto">
           <p className="text-sm uppercase font-medium text-center text-primary mb-4">
             Pricing
@@ -81,7 +85,7 @@ export default function Home() {
         </div>
       </section>
       {/* FAQ */}
-      <section className="bg-base-200">
+      <section className="bg-base-200" id="faq">
         <div className="py-32 px-8 max-w-3xl mx-auto">
           <p className="text-sm uppercase font-medium text-center text-primary mb-4">
             FAQ
