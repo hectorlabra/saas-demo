@@ -1,9 +1,14 @@
 import NextAuth from "next-auth";
+import Resend from "next-auth/providers/resend";
+import { MongoDBAdapter } from "@auth/mongodb-adapter";
+import clientPromise from "./libs/mongo";
 
-// Configuración mínima (agrega tus providers aquí)
-const handler = NextAuth({
-  providers: [],
+export const { handlers, signIn, signOut, auth } = NextAuth({
+  providers: [
+    Resend({
+      apiKey: process.env.RESEND_KEY,
+      from: "noreply@saasdemo.hectorlabra.dev",
+    }),
+  ],
+  adapter: MongoDBAdapter(clientPromise),
 });
-
-// Exporta los handlers GET y POST
-export const handlers = { GET: handler, POST: handler };
